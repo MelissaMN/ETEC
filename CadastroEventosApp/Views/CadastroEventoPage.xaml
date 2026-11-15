@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventosApp.Views.CadastroEventoPage"
+             Title="Cadastro de Eventos">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Preencha os dados do evento"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Nome do Evento:" FontAttributes="Bold" />
+            <Entry Placeholder="Ex: Workshop de .NET MAUI"
+                   Text="{Binding Nome}" />
+
+            <Label Text="Local do Evento:" FontAttributes="Bold" />
+            <Entry Placeholder="Ex: Centro de Convenções"
+                   Text="{Binding Local}" />
+
+            <Label Text="Data de Início:" FontAttributes="Bold" />
+            <DatePicker Date="{Binding DataInicio}"
+                        Format="dd/MM/yyyy"
+                        DateSelected="OnDataInicioSelected" />
+
+            <Label Text="Data de Término:" FontAttributes="Bold" />
+            <DatePicker x:Name="dpDataTermino"
+                        Date="{Binding DataTermino}"
+                        Format="dd/MM/yyyy" />
+
+            <Label Text="Número de Participantes:" FontAttributes="Bold" />
+            <Entry Placeholder="Ex: 50"
+                   Keyboard="Numeric"
+                   Text="{Binding NumeroParticipantes}" />
+
+            <Label Text="Custo por Participante (R$):" FontAttributes="Bold" />
+            <Entry Placeholder="Ex: 150.00"
+                   Keyboard="Numeric"
+                   Text="{Binding CustoPorParticipante}" />
+
+            <Button Text="Cadastrar Evento"
+                    Margin="0,20,0,0"
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Clicked="OnCadastrarClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
